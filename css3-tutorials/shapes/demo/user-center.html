@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="styles/page.css" />
+		<link rel="stylesheet" href="styles/shapes.css" />
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+
+		<style>
+		
+			/* [01.分割线] */
+			.splitter {
+				content: "";
+				display: block;
+				height: 8px;
+				background-color: #f6f6f6;
+				border-top: 1px solid #d1d1d1;
+				border-bottom: 1px solid #d1d1d1;
+			}
+			
+			/* [02.区块标题栏] */			
+			.title-bar {
+				height: 5rem;
+				padding-left: 1rem;
+				padding-right: 1rem;
+				font-size: 2rem;
+				line-height: 5rem;
+			}
+			
+			.title-bar li {
+				display: inline-block;
+				float: left
+			}
+			
+			.title-bar li:last-child {
+				float: right;
+			}
+			
+			.title-bar .badge {
+				display: inline-block;
+				margin-right: 1rem;
+			}
+			
+			.title-bar .guide {
+				color: #999;
+			}
+			
+			.title-bar .icon-right {
+				color: #666;
+				font-size: 1em;
+			}
+			
+			/* [03.会员信息] */
+			.member-info {
+				height: 100px;
+				background-color: dodgerblue;
+			}
+			
+			.splitter:last-child {
+				border-bottom: none;
+			}
+			
+			/* [04.订单Tab] */			
+			.order-tabs {
+				height: 5rem;
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+			}
+			
+			.order-tabs .tablist {
+				height: 2rem;
+				line-height: 2rem;
+			}
+			
+			.order-tabs .tablist li {
+				float: left;
+				display: block;
+				width: 23%;
+				font-size: 2rem;
+				text-align: center;
+				border-right: 1px solid #999;
+			}
+			
+			.order-tabs .tablist li:first-child {
+				width: 31%;
+			}
+			
+			.order-tabs .tablist li:last-child {
+				border-right: none;
+			}
+			
+			.order-tabs .tablist li a{
+				color: #333;
+			}
+			
+			/* [05.服务项目] */			
+			.service-items .guide {
+				color: #ff0066;
+			}
+			
+			/* [06.优惠券] */			
+			.coupons {
+				display: block;
+			}
+			
+			.coupon-list {
+				display: block;
+				padding-left: 1rem;
+				padding-right: 1rem;
+				padding: 10px 5px;
+			}
+			
+			.coupon-list:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.coupon-list > li > .wrapper {
+				margin-left: 5px;
+				margin-right: 5px;
+				padding: 10px;
+				background-color: #f5f5f5;
+			}
+			
+			.coupon-item-info {
+				display: block;
+				/*				padding: 10px 0 0 5px;*/
+			}
+			
+			.coupon-item-info:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.coupon-item-info > li {
+				float: left;
+				display: block;
+				width: 40%;
+			}
+			
+			.coupon-item-info > li:last-child {
+				float: left;
+				display: block;
+				width: 60%;
+			}
+			
+			.coupon-item-info .amount {
+				font-size: 6rem;
+				line-height: 5rem;
+				color: #ff6600;
+				text-align: center;
+				vertical-align: top;
+			}
+			
+
+			.coupon-item-info > li > span {
+				display: inline-block;
+				float: left;
+			}
+			
+			.coupon-item-info > li .currency {
+				padding-top: 3px;
+				color: #0066cc;
+				font-size: 1.6rem;
+				float: left;
+				width: 20px;
+			}
+			
+			.coupon-item-info > li .bubble {
+				margin: 0 0 0 20px;
+				height: 26px;
+				line-height: 20px;
+			}
+			
+			.coupon-item-info > li .bubble a{
+				color: #fff;
+			}
+			
+			.coupon-item-info > li .bubble .view-now{
+				line-height: 26px;
+			}
+			
+			.coupon-item-info .yhq {
+				width: 100%;
+				padding-top: 5px;
+				text-align: center;
+				font-size: 2rem;
+				color: #999;
+				letter-spacing: 3px;
+			}
+			
+			.coupon-item-date {
+				border-top: 3px dashed #33AAEE;
+				text-align: center;
+				padding-top: 5px;
+				padding-bottom: 0;
+
+			}
+			
+			/* [07.收获地址管理] */			
+			.shipping-address {}
+			
+			/* [08.你浏览过的商品] */			
+			.viewed-products {}
+
+			
+			.viewed-products .product-list {
+				margin: 1em 1em;
+				border-top: 2px dotted #ccc;
+			}
+			
+			.viewed-products .product-list li .wrapper {
+				margin-left: 5px;
+				margin-right: 5px;
+				padding: 1rem;
+				background-color: #fff;
+			}
+			
+			.viewed-products .product-list li img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+			
+			.viewed-products .product-list li .pro-price {
+				margin-top: 1rem;
+			}
+			
+			.viewed-products .product-list li .pro-title {
+				margin-top: 10px;
+				padding-bottom: 3px;
+				font-size: 1.6rem;
+				color: #666;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.viewed-products .pro-price .price {
+				float: left;
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: #ff0066;
+			}
+			
+			.viewed-products .pro-price .price .currency {
+				font-size: 1.4rem
+			}
+			
+			.viewed-products .product-list:after,
+			.viewed-products .pro-price:after {
+				display: block;
+				content: "";
+				clear: both;
+			}
+			
+			/* [09.响应式样式] */		
+			@media only screen and (min-width: 320px) {
+				.coupon-list > li {
+					float: left;
+					width: 50%;
+					margin-bottom: 2rem;
+				}
+				.coupon-list > li:last-child {
+					display: none;
+				}
+				.coupon-list .rds-arrow {
+					display: none;
+				}
+				.coupon-item-date {
+					font-size: 1.2rem;
+				}
+				.product-list li {
+					display: block;
+					float: left;
+					width: 50%;
+					margin-bottom: 10px;
+				}
+				.product-list li:last-child {
+					display: none;
+				}
+			}
+			
+			@media only screen and (min-width: 360px) {
+				.coupon-list .rds-arrow {
+					display: inline-block;
+				}
+			}
+			
+			@media only screen and (min-width: 560px) {
+				.coupon-list > li {
+					float: left;
+					width: 33.3%;
+					margin-bottom: 2rem;
+				}
+				.coupon-list > li:last-child {
+					display: block;
+				}
+				.coupon-item-date {
+					font-size: 1.4rem;
+				}
+				.product-list li {
+					display: block;
+					float: left;
+					width: 33.3%;
+					margin-bottom: 10px;
+				}
+				.product-list li:last-child {
+					display: block;
+				}
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="member-info"></div>
+
+		<div>
+			<!--订单tab-->
+			<div class="order-tabs">
+				<ul class="tablist">
+					<li><a href="#">全部订单</a></li>
+					<li><a href="#">待支付</a></li>
+					<li><a href="#">待收货</a></li>
+					<li><a href="#">待评价</a></li>
+				</ul>
+			</div>
+			<div class="splitter"></div>
+			<!--服务项目-->
+			<div class="service-items">
+				<ul class="title-bar">
+					<li><span class="badge"></span></li>
+					<li><span class="title">服务卡项目</span></li>
+					<li>
+						<a href="#">
+							<span class="guide">12次</span>
+							<i class="icon iconfont icon-right"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="splitter"></div>
+			<!--优惠券-->
+			<div class="coupons">
+				<ul class="title-bar">
+					<li><span class="badge"></span></li>
+					<li><span class="title">优惠券</span></li>
+					<li>
+						<a href="#">
+							<span class="guide">全部优惠券</span>
+							<i class="icon iconfont icon-right"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="coupon-list">
+					<li v-for="n in 3">
+						<coupon-item></coupon-item>
+					</li>
+				</ul>
+			</div>
+			<div class="splitter"></div>
+			<!--收获地址管理-->
+			<div class="shipping-address">
+				<ul class="title-bar">
+					<li><span class="badge"></span></li>
+					<li><span class="title">收货地址管理</span></li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-right"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="splitter"></div>
+			<!--您浏览过的商品-->
+			<div class="viewed-products">
+				<ul class="title-bar">
+					<li><span class="badge"></span></li>
+					<li><span class="title">您浏览过的商品</span></li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-right"></i>
+						</a>
+					</li>
+				</ul>
+				<ul class="product-list">
+					<li v-for="n in 3">
+						<viewed-item></viewed-item>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+	<!--优惠券模板-->
+	<template id="coupon-item-template">
+		<div class="wrapper">
+			<ul class="coupon-item-info">
+				<li class="amount">
+					5
+				</li>
+				<li>
+					<div class="currency">¥</div>
+					<div class="bubble">
+						<a href="#">
+							<span class="view-now">立即查看</span>
+							<span class="rds-arrow"></span>
+						</a>
+					</div>
+					<span class="yhq">优惠券</span>
+				</li>
+			</ul>
+			<div class="coupon-item-date">
+				2016.02.18----2016.12.31
+			</div>
+		</div>
+	</template>
+
+	<!--浏览过的商品模板-->
+	<template id="viewed-item-template">
+		<div class="wrapper">
+			<div class="img">
+				<a href="#">
+					<img src="assets/images/guozhini.jpg" />
+				</a>
+			</div>
+			<div class="pro-title">
+				亨氏果泥 乐维滋-苹果香蕉果汁泥120g/袋一岁以上
+			</div>
+			<div class="pro-price">
+				<span class="price"><span class="currency">¥</span>125.00</span>
+			</div>
+		</div>
+	</template>
+
+	<script src="js/vue.js"></script>
+	<script>
+		Vue.component('coupon-item', {
+			template: '#coupon-item-template'
+		})
+
+		Vue.component('viewed-item', {
+			template: '#viewed-item-template'
+		})
+
+		var vm = new Vue({
+			el: 'body'
+		})
+	</script>
+
+</html>

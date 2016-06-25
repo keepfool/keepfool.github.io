@@ -1,0 +1,28 @@
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: simHei, sans-serif;
+			}
+			
+			html {
+				font-size: 62.5%;
+			}
+			
+			body {
+				margin: 0 auto;
+				color: #333;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			table {
+				border-spacing: 0;
+				border-collapse: collapse;
+			}

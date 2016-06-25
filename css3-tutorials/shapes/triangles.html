@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		
+			/* [01.基础样式] */
+			* {
+				font-family: simhei, sans-serif;
+				box-sizing: border-box;
+			}
+			
+			html {
+				font-size: 62.5%;
+			}
+			
+			body {
+				background-color: lightblue;
+			}
+			
+			div {
+				margin: 20px auto;
+			}
+
+			/* [02.旗帜样式 ]*/			
+			.flag {
+				width: 0;
+				height: 0;
+				border: 2rem solid #FF6600;
+				border-top-width: 4rem;
+				border-bottom-color: transparent;
+				border-bottom-width: 2rem;
+			}
+
+			/* [03.向右的双实心箭头样式] */				
+			.rds-arrow-wrapper {
+				position: relative;
+				width: 20em;
+				text-align: center;
+			}
+			
+			.rds-arrow,
+			.rds-arrow:after {
+				display: inline-block;
+				position: relative;
+				width: 0;
+				height: 0;
+				border-top: 1rem solid transparent;
+				border-left: 2rem solid #fff;
+				border-bottom: 1rem solid transparent;
+				border-right: 2rem solid transparent;
+			}
+			
+			.rds-arrow {
+				margin-left: 1rem;
+			}
+			
+			.rds-arrow:after {
+				content: "";
+				position: absolute;
+				left: 100%;
+				top: -1rem;
+				bottom: 0;
+			}
+
+			/* [04.气泡样式] */				
+			.bubble {
+				position: relative;
+				background-color: #33AAEE;
+				width: 10rem;
+				height: 3rem;
+				font-size: 2rem;
+				line-height: 3rem;
+				color: #FFF;
+				text-align: center;
+			}
+			
+			.bubble:before {
+				position: absolute;
+				content: "";
+				right: 100%;
+				top: 1rem;
+				width: 0;
+				height: 0;
+				border-top: 0.6rem solid transparent;
+				border-right: 0.6rem solid #33AAEE;
+				border-bottom: 0.6rem solid transparent;
+				border-left: 0.6rem solid transparent;
+			}
+			
+			.bubble .text {
+				display: inline-block;
+			}
+
+			/* [05.丝带样式] */	
+			
+			/* 丝带主体长方形 */			
+			.ribbon {
+				position: relative;
+				width: 10rem;
+				height: 3rem;
+				padding: 0.7rem 0;
+				font-size: 1.6rem !important;
+				color: #fff;
+				text-align: center;
+				background: #ff0066;
+			}
+
+			/* 丝带左右两侧的耳朵 */				
+			.ribbon:before,
+			.ribbon:after {
+				content: "";
+				position: absolute;
+				display: block;
+				bottom: -0.6rem;
+				border: 1.5rem solid #ff0066;
+				z-index: -1;
+			}
+			
+			.ribbon:before {
+				left: -2.4rem;
+				border-right-width: 1.5rem;
+				border-left-color: transparent;
+				box-shadow: 1px 1px 0 rgba(176, 102, 166, 0.8);
+			}
+			
+			.ribbon:after {
+				right: -2.4rem;
+				border-left-width: 1.5rem;
+				border-right-color: transparent;
+				box-shadow: 0 1px 0 rgba(176, 102, 166, 0.8);
+			}
+
+			/* 丝带阴影 */				
+			.ribbon .ribbon-content:before,
+			.ribbon .ribbon-content:after {
+				content: "";
+				position: absolute;
+				display: block;
+				border-style: solid;
+				border-color: #bf004c transparent transparent transparent;
+				bottom: -0.6rem;
+			}
+			
+			.ribbon .ribbon-content:before {
+				left: 0;
+				border-width: 0.6rem 0 0 0.6rem;
+			}
+			
+			.ribbon .ribbon-content:after {
+				right: 0;
+				border-width: 0.6rem 0.6rem 0 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flag"></div>
+		<div class="rds-arrow-wrapper"><span class="rds-arrow"></span></div>
+		<div class="bubble"><span class="text">立即查看</span></div>
+		<div class="ribbon">
+			<span class="ribbon-content">金卡会员</span>
+		</div>
+
+	</body>
+
+</html>
