@@ -1,0 +1,326 @@
+/*
+ *  1. 设置根元素font-size
+ * 	2. 重置元素默认样式
+ * 	3. 设置.container, #header,#wrapper, #scroll和#footer样式
+ * 
+ */
+
+
+/* [1. 设置根元素font-size] */
+
+html {
+	font-size: 100px;
+}
+
+
+/* [2. 重置元素默认样式] */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: helvetica, simHei, sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 5rem;
+	margin: 0 auto;
+	color: #333;
+	background: #f0f2f5;
+}
+
+a,
+button,
+input {
+	outline: 0 none;
+	text-decoration: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+a:link,
+a:visited a:hover,
+a:active {
+	color: #333;
+}
+
+a:hover {
+	color: #FF0066;
+}
+
+li {
+	list-style: none;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1469512307_8244565.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1469512307_8244565.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1469512307_8244565.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1469512307_8244565.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1469512307_8244565.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                    
+                    
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-phone:before { content: "\e60f"; }
+.icon-youhuiquan:before { content: "\e613"; }
+.icon-daifukuan:before { content: "\e605"; }
+.icon-p-wait-assess:before { content: "\e609"; }
+.icon-user-copy:before { content: "\e612"; }
+.icon-product:before { content: "\e600"; }
+.icon-jifen:before { content: "\e60d"; }
+.icon-shouhuodizhi:before { content: "\e60c"; }
+.icon-shouhuo:before { content: "\e60e"; }
+.icon-back02:before { content: "\e602"; }
+.icon-truck:before { content: "\e60a"; }
+.icon-yue:before { content: "\e614"; }
+.icon-cart:before { content: "\e601"; }
+.icon-daishouhuo:before { content: "\e610"; }
+.icon-daishouhuo1:before { content: "\e611"; }
+.icon-order:before { content: "\e60b"; }
+.icon-down:before { content: "\e603"; }
+.icon-up:before { content: "\e604"; }
+.icon-grade:before { content: "\e606"; }
+.icon-left:before { content: "\e607"; }
+.icon-right:before { content: "\e608"; }
+
+
+/* [3. 设置.container, #header,#wrapper, #scroll和#footer样式] */
+
+.container {
+	margin: 0 auto;
+	/*	max-width: 6.4rem;*/
+}
+
+.container > .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	line-height: .5rem;
+}
+
+.container > .body {
+	margin-top: .5rem;
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	background: #f0f2f5;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background: #f0f2f5;
+}
+
+#footer {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #f5f5f5;
+	padding: 0;
+	border-top: 1px solid #f5f5f5;
+}
+
+.ribbon {
+	font-size: 0.16rem !important;
+	width: .8rem;
+	height: .24rem;
+	position: relative;
+	background: #ff0066;
+	color: #fff;
+	text-align: center;
+	padding: 0.03rem 0;
+}
+
+.ribbon:before,
+.ribbon:after {
+	content: "";
+	position: absolute;
+	display: block;
+	bottom: -0.06rem;
+	border: 0.1rem solid #ff0066;
+	/*z-index: -1;*/
+}
+
+.ribbon:before {
+	left: -.14rem;
+	border-right-width: .1rem;
+	border-left-color: transparent;
+	box-shadow: 0 1px 0 rgba(176, 102, 166, 0.8);
+}
+
+.ribbon:after {
+	right: -.14rem;
+	border-left-width: .1rem;
+	border-right-color: transparent;
+	box-shadow: 0 1px 0 rgba(176, 102, 166, 0.8);
+}
+
+.ribbon .ribbon-content:before,
+.ribbon .ribbon-content:after {
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #bf004c transparent transparent transparent;
+	bottom: -0.06rem;
+	z-index: 1;
+}
+
+.ribbon .ribbon-content:before {
+	left: 0;
+	border-width: 0.06rem 0 0 0.06rem;
+}
+
+.ribbon .ribbon-content:after {
+	right: 0;
+	border-width: 0.06rem 0.06rem 0 0;
+}
+
+.badge {
+	width: 0;
+	height: 0;
+	border: .06rem solid #FF0066;
+	border-top-width: .12rem;
+	border-bottom-color: transparent;
+	border-bottom-width: .06rem;
+}
+
+.splitter {
+	content: "";
+	display: block;
+	height: 8px;
+	background-color: #f6f6f6;
+	border-top: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+}
+
+.bb-1px {
+	border-bottom: 1px solid #E4E3E8;
+}
+
+.bt-1px {
+	border-top: 1px solid #E4E3E8;
+}
+
+.br-1px {
+	border-right: 1px solid #E2E3E8;
+}
+
+.bl-1px {
+	border-left: 1px solid #E2E3E8;
+}
+
+.ml-10{
+	margin-left: .1rem;
+}
+
+.mt-10{
+	margin-top: .1rem;
+}
+
+.mb-10{
+	margin-bottom:  .1rem;
+}
+
+.mt-15{
+	margin-top: .15rem;
+}
+
+.mb-15{
+	margin-bottom: .15rem;
+}
+
+.pv-15{
+	padding-top: .15rem;
+	padding-bottom: .15rem;
+}
+.pb-10{
+	padding-bottom: .1rem;
+}
+
+.pv-10{
+	padding-top: .1rem;
+	padding-bottom: .1rem;
+}
+.ph-10{
+	padding-left: .1rem;
+	padding-right:.1rem;
+}
+.pvh-10{
+	padding: .1rem;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.clear {
+	clear: both;
+}
+
+@media only screen and (min-width: 320px) {
+	html {
+		font-size: 80px;
+	}
+}
+
+@media only screen and (min-width: 360px) {
+	html {
+		font-size: 90px;
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	html {
+		font-size: 100px;
+	}
+}
